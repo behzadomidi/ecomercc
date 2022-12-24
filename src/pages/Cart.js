@@ -134,11 +134,8 @@ const Cart = () => {
                       </IconButton>
                     </Tooltip>
                   </div>
-                  
                   <hr />
                 </div>
-
-
               );
             })}
           </div>
