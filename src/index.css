@@ -1,0 +1,32 @@
+body {
+  background-color: rgb(222, 222, 222);
+}
+.card {
+  transition: all 0.5s ease;
+}
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.product img {
+  transition: all 0.5s ease;
+  border-radius: 7px;
+}
+.product img:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.login {
+  background-color: rgb(245, 245, 245);
+  border-radius: 12px;
+}
+.badge {
+  cursor: pointer;
+}
+.btn-btn{
+  cursor: pointer;
+  
+}
+
