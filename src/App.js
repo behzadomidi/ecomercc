@@ -14,7 +14,7 @@ import Orders from "./pages/Orders";
 import ProductDetails from "./pages/ProductDetails";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
-import {ProtectedRoute} from "../src/provider/protected-route"
+import { ProtectedRoute } from "../src/provider/protected-route";
 function App() {
   return (
     <>
@@ -23,16 +23,86 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/product/:productId" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/login"  element={<ProtectedRoute><Login /></ProtectedRoute>} />
-        <Route path="/register" element={<ProtectedRoute><Register /></ProtectedRoute>} />
-        <Route path="/address" element={<ProtectedRoute><Address /></ProtectedRoute>} />
-        <Route path="/checkout" element={<ProtectedRoute><CheckOut /></ProtectedRoute>} />
-        <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-        <Route path="/setting/changeProfile" element={<ProtectedRoute><ChangeProfile /></ProtectedRoute>} />
-        <Route path="/setting/changePassword" element={<ProtectedRoute><ChangePassword /></ProtectedRoute>} />
-        <Route path="/setting/changeAvatar" element={<ProtectedRoute><ChangeAvatar /></ProtectedRoute>} />
-        <Route path="/orders" element={<ProtectedRoute><Orders /></ProtectedRoute>} />
-        <Route path="/orders/:orderId" element={<ProtectedRoute><OrderId /></ProtectedRoute>} />
+        <Route
+          path="/login"
+          element={
+            <ProtectedRoute>
+              <Login />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <ProtectedRoute>
+              <Register />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/address"
+          element={
+            <ProtectedRoute>
+              <Address />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/checkout"
+          element={
+            <ProtectedRoute>
+              <CheckOut />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/setting/changeProfile"
+          element={
+            <ProtectedRoute>
+              <ChangeProfile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/setting/changePassword"
+          element={
+            <ProtectedRoute>
+              <ChangePassword />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/setting/changeAvatar"
+          element={
+            <ProtectedRoute>
+              <ChangeAvatar />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/orders"
+          element={
+            <ProtectedRoute>
+              <Orders />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/orders/:orderId"
+          element={
+            <ProtectedRoute>
+              <OrderId />
+            </ProtectedRoute>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

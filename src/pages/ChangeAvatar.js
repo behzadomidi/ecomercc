@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import { ChangeAvatarUser } from "../helpers/api-helper/user";
 import { Spinner } from "react-bootstrap";
-import { Alert, CssBaseline, Snackbar, Typography ,Container,Box,Avatar} from "@mui/material";
+import {
+  Alert,
+  CssBaseline,
+  Snackbar,
+  Typography,
+  Container,
+  Box,
+  Avatar,
+} from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import PhotoCamera from "@mui/icons-material/PhotoCamera";
 
 const ChangeAvatar = () => {
   const [image, setImage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [open, setOpen] = useState(true);
 
   const handelChange = (e) => {
-    setError('');
+    setError("");
     setIsSubmitted(false);
     setImage(e.target.files[0]);
   };
@@ -23,30 +31,30 @@ const ChangeAvatar = () => {
     const formData = new FormData();
     formData.append("profile-image", image);
     setIsLoading(true);
-    setError('');
+    setError("");
     ChangeAvatarUser(
       formData,
       () => setIsSubmitted(true),
       (error) => setError(error.data),
       () => setIsLoading(false)
-      );
+    );
   };
 
   const handleClose = () => {
     setOpen(false);
   };
- 
+
   return (
     <Container className="login" component="main" maxWidth="md">
       {error && (
-        <Snackbar open={open} >
+        <Snackbar open={open}>
           <Alert variant="filled" severity="error" onClose={handleClose}>
             {error}
           </Alert>
         </Snackbar>
       )}
       {isSubmitted && (
-        <Snackbar open={open} >
+        <Snackbar open={open}>
           <Alert variant="filled" severity="success" onClose={handleClose}>
             submitted Successful!
           </Alert>
@@ -85,7 +93,7 @@ const ChangeAvatar = () => {
         >
           <form onSubmit={onSubmitHandler}>
             <input onChange={handelChange} type="file" />
-            <button type="submit" className="btn btn-primary" >
+            <button type="submit" className="btn btn-primary">
               <PhotoCamera />
               {isLoading ? (
                 <Spinner animation="grow" variant="secondary" />

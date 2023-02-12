@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const token = localStorage.getItem("token")
+const token = localStorage.getItem("token");
 
 export const getUserProfile = (
   succeedCallBack,
@@ -118,9 +118,7 @@ export const ChangeAvatarUser = (
   finallyCallBack
 ) => {
   axios
-    .post("http://kzico.runflare.run/user/profile-image",
-     formData,
-    {
+    .post("http://kzico.runflare.run/user/profile-image", formData, {
       headers: {
         authorization: `Bearer ${token}`,
       },
