@@ -12,7 +12,7 @@ import NotFound from "./pages/NotFound";
 import OrderId from "./pages/OrderId";
 import Orders from "./pages/Orders";
 import ProductDetails from "./pages/ProductDetails";
-import Profile from "./pages/Profile";
+// import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import { ProtectedRoute } from "../src/provider/protected-route";
 function App() {
@@ -55,14 +55,14 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route
+        {/* <Route
           path="/profile"
           element={
             <ProtectedRoute>
               <Profile />
             </ProtectedRoute>
           }
-        />
+        /> */}
         <Route
           path="/setting/changeProfile"
           element={
